@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: .24rem;
+  color: #333;
+}
+
+.homeContainer {
+  overflow: hidden;
+  position: relative;
+}
+
+.HomeList {
+  margin-top: .44rem;
+  margin-bottom: .44rem;
+}
+
+.HomeListLoading {
+  margin-bottom: 1.04rem;
+}
+
+.homeLoading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: .44rem;
+  text-align: center;
+}
+
+.loadingImg {
+  width: .6rem;
+}
+.tab-container{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  font-size: 14px;
+  z-index: 99;
+}
+.tab-container a{
+  display: inline-block;
+  flex: 1;
+  text-align: center;
+  height: 100%;
+  line-height: 44px;
+  text-decoration: none;
+  color: #fff;
+  background: #ef6100;
+  /* width: 100%; */
+
+}
+.tab-container a.tab-active {
+  background: blueviolet;
+  color: #ef6100;
+}
+.route-container{
+  padding-bottom: 50px;
+}
+.box{
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
