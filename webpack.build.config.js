@@ -38,7 +38,7 @@ config.optimization.minimizer.push(
 				comments: false,
 			}
 		},
-		sourceMap: true
+		sourceMap: false
 	}),
 )
 

@@ -1,5 +1,5 @@
 
-import React, {Component} from 'react'
+import React, {Component, PureComponent} from 'react'
 import {connect} from 'react-redux';
 
 import  'assets/style.css';
@@ -8,7 +8,36 @@ import Header from 'components/Header';
 import {requestHomeList} from 'actions/homeList';
 import { Button } from 'antd'
 import FirstHooks from 'components/hooks'
-import SimpleDiagram from 'components/diagrams/simple'
+// import SimpleDiagram from 'components/diagrams/simple'
+
+class Test extends PureComponent {
+	constructor(props){
+		super(props);
+		this.state = {
+			data: props.data
+		}
+	}
+
+	render() {
+		let { data } = this.state
+		console.log('test')
+		return (
+			<div>
+
+				{
+					data.map( (item, idx) => {
+						return <div key={idx}>{item}</div>
+					})
+				}
+			</div>
+		)
+	}
+
+	// shouldComponentUpdate(nextProps, nextState) {
+	// 	console.log(nextState);
+	// 	return nextState.data != this.state.data
+	// }
+}
 
 class ChildComponent extends Component {
 	constructor(props) {
@@ -50,7 +79,9 @@ class Home extends Component {
 		super(props);
 		this.state = {
 			isLoading: false,
-			name: 'bruce'
+			name: 'bruce',
+			data: [1, 2, 3],
+			a: 0
 		};
 	}
 
@@ -62,6 +93,7 @@ class Home extends Component {
 	}
 
 	render() {
+		let { data, name } = this.state
 		return (
 			<div className="homeContainer">
 				{/* <Header title='HOME'/> */}
@@ -69,7 +101,11 @@ class Home extends Component {
 				<ChildComponent name={this.state.name} />
 				<FirstHooks />
 				<div className='box'></div> */}
-				<div style={{width: '600px', height: '600px', margin: '0 auto'}}><SimpleDiagram /></div>
+				<div style={{width: '600px', height: '600px', margin: '0 auto'}}>
+					<Test data={data} />
+					{name}
+				</div>
+				<FirstHooks />
 			</div>
 		)
 	}

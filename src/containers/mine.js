@@ -4,6 +4,8 @@
 import React, { Component } from 'react'
 import { hashHistory } from 'react-router';
 import { Button } from 'antd'
+import FirstHooks from 'components/hooks'
+
 
 export default class Second extends Component{
 	constructor(props){
@@ -14,6 +16,7 @@ export default class Second extends Component{
         <div>
           Mine page
           <Button>djfad</Button>
+          <FirstHooks />
         </div>
       )
     }
